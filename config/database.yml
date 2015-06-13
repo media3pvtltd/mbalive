@@ -6,7 +6,7 @@
 #
 development:
   adapter: postgresql
-  database: mbanumbers	
+  database: mbanum	
   host: localhost 
   username: postgres
   password: media3
