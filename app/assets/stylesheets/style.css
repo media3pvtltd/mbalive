@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.5; margin-bottom: 18px; font-weight: 600
 /*----------------------------------------------------------------------*/
 
 /*--- structure ---*/
-.container{ padding: 0px; margin: 0px auto; /* position: relative; */ }
+.container{ padding: 0px; margin: 0px auto;  }
 .column, .columns{ float: left; position: relative; min-height: 1px; }
 
 .one-ninth{ width: 11.111%; }
@@ -120,17 +120,16 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.5; margin-bottom: 18px; font-weight: 600
 .ie7 .gdlr-item-start-content{ overflow: hidden; }
 audio{ width: 100%; }
 .mejs-container .mejs-controls .mejs-horizontal-volume-slider{ position: relative; clear: both; float: right; top: -31px; }
-img, video{ max-width: 100%; height: auto; width: auto; /* for ie8 */ }
+img, video{ max-width: 100%; height: auto; width: auto;}
 .ms-container video{ max-width: none; }
 input[type="text"], input[type="email"], input[type="password"], textarea{ 
 	border: 0px; outline: none; padding: 6px; max-width: 100%; }
 
 /*--- transition / color animation  ---*/
-a{
-	transition: color 300ms, background-color 300ms, opacity 300ms;
-	-moz-transition: color 300ms, background-color 300ms, opacity 300ms;    /* FF3.7+ */
-	-o-transition: color 300ms, background-color 300ms, opacity 300ms;      /* Opera 10.5 */
-	-webkit-transition: color 300ms, background-color 300ms, opacity 300ms; /* Saf3.2+, Chrome */ }
+a{	transition: color 300ms, background-color 300ms, opacity 300ms;
+	-moz-transition: color 300ms, background-color 300ms, opacity 300ms;   
+	-o-transition: color 300ms, background-color 300ms, opacity 300ms;     
+	-webkit-transition: color 300ms, background-color 300ms, opacity 300ms;  }
 
 /*--- boxed style ---*/	
 .body-wrapper{ overflow: hidden; }
@@ -224,7 +223,7 @@ img.gdlr-full-boxed-background{ min-height: 100%; min-width: 1024px;
 .gdlr-navigation-wrapper .gdlr-main-menu > li{ padding: 0px; }
 .gdlr-navigation-wrapper .gdlr-main-menu > li > a{ font-size: 11px;opacity: 1.5; padding: 0px 20px 15px 0px; margin: 0px; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; }
 .gdlr-navigation-wrapper .gdlr-main-menu > li:first-child > a{ padding-left: 0px; }
-/*.gdlr-navigation-wrapper .gdlr-main-menu > li > a:before { content: "•"; margin-right: 20px; }*/
+
 .gdlr-navigation-wrapper .gdlr-main-menu > li:first-child > a:before { display: none; }
 .gdlr-navigation-wrapper .gdlr-main-menu > li > a.sf-with-ul:after{ display: none;  }
 
@@ -257,7 +256,6 @@ img.gdlr-full-boxed-background{ min-height: 100%; min-width: 1024px;
 .widget.gdlr-widget { margin-bottom: 60px; }
 
 /*--- stunning-text ---*/	
-.31{ position: relative; }
 
 .gdlr-stunning-text-item.type-center{ text-align:center;  margin-bottom: 35px; }
 .gdlr-stunning-text-item.type-center .stunning-text-title{ font-size: 33px; font-weight: bold; margin-bottom: 25px; }
@@ -771,27 +769,7 @@ body .ls-v5 .ls-nav-prev { left: 20px; }
 body .ls-v5 .ls-nav-next { right: 20px; }
 
 /* -- Master slider style modification --*/
-body .ms-skin-default .ms-nav-prev,
-body .ms-skin-default .ms-nav-next{ width: 27px; height: 46px; margin-top: -13px; }
-body .ms-skin-default .ms-nav-prev{ background: url('/assets/master-slider-left.png'); }
-body .ms-skin-default .ms-nav-next{ background: url('/assets/master-slider-right.png'); margin-left: 1108px;}
-body .ms-skin-default .ms-bullet { background-image: none; ;
-	border-width: 2px; border-style: solid; border-color: #ffffff
-	-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; 
-	transition: background-color 200ms; -moz-transition: background-color 200ms;
-	-o-transition: background-color 200ms; -webkit-transition: background-color 200ms;
-	margin-bottom: 20px; width: 8px; height: 8px;
-	}
-body .ms-skin-default .ms-bullet-selected { background-image: none; }
-body .ms-skin-default .ms-inner-controls-cont { position: static; }
-body .ms-skin-default .ms-bullet.ms-bullet-selected,
-body .ms-skin-default .ms-bullet:hover { background: #949494; }
-body .ms-skin-default .ms-slide .ms-slide-vcbtn { top: auto; bottom: 60px; right: 50%; margin-right: -14px; }
-body..ms-skin-default .ms-nav-next {
-width: 27px;
-height: 46px;
-margin-top: -13px;
-}
+
 
 /*--- price table ---*/
 .gdlr-price-inner-item{ margin: 0px 3px; border-style: solid; border-width: 1px;
@@ -1260,7 +1238,7 @@ margin-right: 15px; margin-bottom: 15px; }
 /*--- easy pie chart ---*/	
 .gdlr-chart { position: relative; text-align: center; display: inline-block; }
 .gdlr-chart canvas { position: absolute; top: 0; left: 0; max-width: 100%; max-height: 100%; 
-	max-height: none\9; /*- for ie 8 and below-*/ }
+	max-height: none\9;}
 .gdlr-chart .chart-content-wrapper { position: absolute; left: 50%; top: 50%; line-height: 1; z-index: 1; }
 .gdlr-chart .chart-content-wrapper .chart-content-inner { position: relative; left: -50%; margin-top: -25%; }
 .gdlr-chart .chart-content-wrapper .chart-content{ font-size: 16px; margin-bottom: 8px; display: block; }
@@ -1437,13 +1415,14 @@ text-align: right;
 text-overflow: ellipsis;
 white-space: nowrap;
 }
+}
 
 @media (min-width: 768px){
 .dl-horizontal dd {
 margin-left: 180px;
 margin-bottom: 16px;
 }
-
+}
 /*well for forum*/
 .well {
 min-height: 20px;

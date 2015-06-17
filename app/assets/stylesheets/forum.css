@@ -4485,28 +4485,7 @@ a.fontsize {
 .icon-pages						{ background-image: url("./styles/marina_teal/theme/images/icon_pages.gif"); }
 .icon-search					{ background-image: url("./styles/marina_teal/theme/images/icon_search.gif"); }
 
-/* Profile & navigation icons */
-/*.email-icon, .email-icon a		{ background-image: url("./styles/marina_teal/imageset/icon_contact_email.gif"); }*/
-/*.aim-icon, .aim-icon a			{ background-image: url("./styles/marina_teal/imageset/icon_contact_aim.gif"); }*/
-/*.yahoo-icon, .yahoo-icon a		{ background-image: url("./styles/marina_teal/imageset/icon_contact_yahoo.gif"); }*/
-/*.web-icon, .web-icon a			{ background-image: url("./styles/marina_teal/imageset/icon_contact_www.gif"); }*/
-/*.msnm-icon, .msnm-icon a			{ background-image: url("./styles/marina_teal/imageset/icon_contact_msnm.gif"); }*/
-/*.icq-icon, .icq-icon a			{ background-image: url("./styles/marina_teal/imageset/icon_contact_icq.gif"); }*/
-/*.jabber-icon, .jabber-icon a		{ background-image: url("./styles/marina_teal/imageset/icon_contact_jabber.gif"); }*/
-/*.pm-icon, .pm-icon a				{ background-image: url("./styles/marina_teal/imageset/en/icon_contact_pm.gif"); }*/
-/*.quote-icon, .quote-icon a		{ background-image: url("./styles/marina_teal/imageset/en/icon_post_quote.gif"); }*/
 
-/* Moderator icons */
-/*.report-icon, .report-icon a		{ background-image: url("./styles/marina_teal/imageset/icon_post_report.gif"); }*/
-/*.edit-icon, .edit-icon a			{ background-image: url("./styles/marina_teal/imageset/en/icon_post_edit.gif"); }*/
-/*.delete-icon, .delete-icon a		{ background-image: url("./styles/marina_teal/imageset/icon_post_delete.gif"); }*/
-/*.info-icon, .info-icon a			{ background-image: url("./styles/marina_teal/imageset/icon_post_info.gif"); }*/
-/*.warn-icon, .warn-icon a			{ background-image: url("./styles/marina_teal/imageset/icon_user_warn.gif"); } /* Need updated warn icon */*/
-
-/*  	
---------------------------------------------------------------
-Colours and backgrounds for cp.css
--------------------------------------------------------------- */
 
 /* Main CP box
 ----------------------------------------*/
