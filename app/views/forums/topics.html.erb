@@ -4,10 +4,7 @@
 
 <div class="gdlr-lms-container gdlr-lms-container">
         <div class="gdlr-lms-item">
-<div class="one columns" style="margin-top: 30px;
-"><%= ad_unit(:skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %></div>
-<div class="one columns"></div>
-<div class="eight columns" style="margin-top: 30px;">
+<div class="ten columns" >
 <div class="well">
 <div class="topic-actions">
 	<div class="buttons">
@@ -92,12 +89,21 @@
 </div>
 </div>
 <div class="clear"></div>
+<%= will_paginate @topics , :class => 'gdlr-pagination'%>
+
 </div>
-<div class="one columns"></div>
-<div class="one columns" style="margin-top: 30px;
-"><%= ad_unit(:skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
-<div class="clear"></div>
-</div>
+<div class="gdlr-sidebar gdlr-right-sidebar two columns" >
+    <div class="google_adsense skyscraper" style="padding-left: 18px;">
+     <div class="profile_blog_lft" style="border:none">
+            <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+
+            <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+            
+    
+            </div>
+    </div>
+    
+  </div>
 <div class="clear"></div>
 </div>
 </div>

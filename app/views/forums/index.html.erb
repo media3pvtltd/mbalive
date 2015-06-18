@@ -6,9 +6,8 @@
 
 <div style="margin-top:20px">
 
-<div class="one columns"><%= ad_unit(:skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %></div>
-<div class="one columns"></div>
-<div class="eight columns">
+
+<div class="ten columns">
 <div class="well">
   <div class="forabg">
     <div class="inner">
@@ -66,9 +65,21 @@
   <div class="clear"></div>
 </div>
 <div class="clear"></div>
+<%= will_paginate @forum, :class => 'gdlr-pagination'%>
 </div>
-<div class="one columns"></div>
-<div class="one columns"><%= ad_unit(:skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %></div>
+<div class="gdlr-sidebar gdlr-right-sidebar two columns" >
+    <div class="google_adsense skyscraper" style="padding-left: 18px;">
+     <div class="profile_blog_lft" style="border:none">
+            <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+
+            <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+            
+    
+            </div>
+    </div>
+    
+  </div>
+
 <div class="clear"></div>
 </div>
 </div>

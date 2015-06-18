@@ -7,7 +7,7 @@ layout 'homepage'
 
   def index
     
-  	@forum=Refforum.order(created_at: :desc).paginate(:page => params[:page], :per_page => 20)
+  	@forum=Refforum.order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
     @title = "Forum"
   end
   def topics
@@ -17,7 +17,7 @@ layout 'homepage'
     @forum_data = Refforum.find(params[:id])
     # @description = Refforum.find(params[:id]).description
     
-    @topics = Refforum.find(params[:id]).topics
+    @topics = Refforum.find(params[:id]).topics.paginate(:page => params[:page], :per_page => 20)
     
   end
   def topic_new
@@ -31,7 +31,7 @@ layout 'homepage'
   end
   def posts
      @title = "Forum"
-    @posts = Topic.find(params[:topic]).posts
+    @posts = Topic.find(params[:topic]).posts.paginate(:page => params[:page], :per_page => 1)
   end
   def post_new
     @post = Post.new(params.permit(:topic_id, :content))
