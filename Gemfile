@@ -69,7 +69,8 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 # gem 'ads-rails', '~> 0.2.0'
 
 gem 'dragonfly', '~> 1.0.7'
-
+gem 'execjs'
+gem 'therubyracer'
 
 gem 'refinerycms-testimonials', path: 'vendor/extensions'
 gem 'nprogress-rails'
