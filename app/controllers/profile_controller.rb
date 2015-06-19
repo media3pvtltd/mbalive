@@ -7,7 +7,7 @@ before_action :check_session, :only => [:login, :create]
   def index
     @title = 'My Profile'
     @stuff = Stuff.find_by_member_id(session[:user_id]) || Stuff.new
-    @app_data = Application.where('user_id=?',session[:user_id]).order('school ASC')
+    @app_data = Application.where('user_id=?',session[:user_id]).order('school ASC').paginate(:page => params[:page], :per_page => 5)
     @q = Member.ransack(params[:q])
      # binding.pry
      # @users = Member.find_by_username(['username'])
@@ -60,7 +60,7 @@ before_action :check_session, :only => [:login, :create]
     if params[:username] != current_user.username
       unless @user.nil?
         @stuff = Stuff.find_by_member_id(@user.id)
-        @lists = Application.where('user_id=?',@user.id).order('school ASC')
+        @lists = Application.where('user_id=?',@user.id).order('school ASC').paginate(:page => params[:page], :per_page => 5)
         @buseridcount=Bookmark.where("bookmarkuserid = ? and currentuserid =?", @user.id,session[:user_id]
         ).count
         @comments = Comment.where('target_id=?',@user.id).paginate(:page => params[:page], :per_page => 5)
@@ -94,22 +94,22 @@ before_action :check_session, :only => [:login, :create]
 
  def searchuser
     @title= 'Search By Name'
-    @users=Member.where("username LIKE ? ", "%#{params[:username]}%")  
+    @users=Member.where("username LIKE ? ", "%#{params[:username]}%").paginate(:page => params[:page], :per_page => 12)  
     # redirect_to profile_name_path
     render 'name'
     
  end
 def schoolapplied
 @title = "Search by schools Applied"
-    @updates = Application.all
-    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
+    @updates = Application.all.paginate(:page => params[:page], :per_page => 12)
+    @all_mebers=Member.order('created_at DESC')
 
   
 end
 
 def searchschool
   @title = "Search by schools Applied"
-  @appliedschool=Application.where("school LIKE ?","%#{params[:schoolname]}%").paginate(:page => params[:page], :per_page => 20)
+  @appliedschool=Application.where("school LIKE ?","%#{params[:schoolname]}%").paginate(:page => params[:page], :per_page => 12)
   render 'schoolapplied'
 
 end
@@ -348,7 +348,7 @@ end
   
   def topusers
     @title="Top Users"
-    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
+    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 12)
     
     # Client.all(:order => "created_at DESC")
     # Client.all(:order => "created_at DESC")
@@ -368,8 +368,8 @@ end
 
   def profileupdates
     @title = "Profile Updates"
-    @updates = Application.all
-    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
+    @updates = Application.all.paginate(:page => params[:page], :per_page => 12)
+    @all_mebers=Member.order('created_at DESC')
     
     # binding.pry
   end
@@ -397,7 +397,7 @@ end
   end
   def name
     @title="Search By Name"
-    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
+    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 12)
   end
   def commitschool
     @commitschool=Member.find(params[:cuurentuserid]).update(:commitschool => params[:schoolname])
