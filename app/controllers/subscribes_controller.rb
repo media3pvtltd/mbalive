@@ -7,11 +7,12 @@ layout 'homepage'
         @subs = Subscriber.new(:token => token, email: params["email"],activation: true)
         
         if @subs.save
-        	
+        	UserMailer.subadmin(@subs).deliver!
 			UserMailer.contacts(@subs).deliver!
 			flash[:success] = "Thank you for Subscribing us"
 		end
 	end
+
 	def confirm
 		@sub = Subscriber.find_by_token(params[:token])
 		unless @sub.nil?
