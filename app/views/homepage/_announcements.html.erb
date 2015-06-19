@@ -11,7 +11,7 @@
 			</header><!-- entry-header -->
 		</div>
 	</article>
-	<lable style="text-align:justify;"><%=raw f.description.truncate(150) %></lable><!--  <div class="clear"></div> -->
+	<%=raw f.description.truncate(150) %><!--  <div class="clear"></div> -->
 	<a href="<%=announces_announce_path(f.id) %>">Read More</a>
 	</div>
 
@@ -20,5 +20,4 @@
 <% else %>
 	<p style="text-align:center">No RECENT ANNONCEMENTS</p>
 <%end%>
-<link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 </div>
