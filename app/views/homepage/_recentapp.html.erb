@@ -20,8 +20,10 @@
 						%> 
 <div class="gdlr-lms-course-content">
 <h3 class="gdlr-lms-course-title">
-<a href="#"><%=@user.username %></a><p><br>GPA: <%= number_with_precision(@user.gpa, precision: 2)  %><br>GMAT: <%=@user.gmat_score %></p><%=user.status %>  at  <% sid =user.school.split('-') %> <% sname=user.school.split('-') %>
-<%= sname[0] %> - <%= sname[1] %> 
+<a href="#"><%=@user.username %></a>
+
+<div>GPA: <%= number_with_precision(@user.gpa, precision: 2)  %><br>GMAT: <%=@user.gmat_score %><br><%=user.status %>  at  <% sid =user.school.split('-') %> <% sname=user.school.split('-') %>
+<%= sname[0] %> - <%= sname[1] %> </div>
 </h3>
 <div class="gdlr-lms-course-price">
 <% if user.status == "Waitlisted" %>
@@ -39,11 +41,14 @@
 														
 													<% end %>
 
+				</div>
+				<div class="gdlr-lms-course-info">
+				<i class="icon-time">– Updated at <%= user.updated_at.strftime("%d-%m-%Y") %></i>
+				</div>
+				<div class="clear"></div>
+
 </div>
-<div class="gdlr-lms-course-info">
-<i class="icon-time">– Updated at <%= user.updated_at.strftime("%d-%m-%Y") %></i>
-</div>
-<div class="clear"></div></div></li>
+</li>
 <li class="gdlr-lms-course-grid2 gdlr-lms-item " style="float: left; display: block; height: 375px; width: 350px;">
 <!-- <div class="gdlr-lms-course-thumbnail">
 <a href="http://themes.goodlayers.com/clevercourse/course/starting-company-all-you-need-to-know-to-start-company/">
@@ -53,7 +58,9 @@
 <div class="clear"></div>
 <%end %>
 <% else %>
-	<p style="color:black; font-size:16px">No Recent Application Updates</p></div>
+	<p style="color:black; font-size:16px">No Recent Application Updates</p>
+
+</div>
 <%end%>
 </li>
 
