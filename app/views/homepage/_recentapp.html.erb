@@ -22,8 +22,8 @@
 <h3 class="gdlr-lms-course-title">
 <a href="#"><%=@user.username %></a>
 
-<div>GPA: <%= number_with_precision(@user.gpa, precision: 2)  %><br>GMAT: <%=@user.gmat_score %><br><%=user.status %>  at  <% sid =user.school.split('-') %> <% sname=user.school.split('-') %>
-<%= sname[0] %> - <%= sname[1] %> </div>
+GPA: <%= number_with_precision(@user.gpa, precision: 2)  %><br>GMAT: <%=@user.gmat_score %><br><%=user.status %>  at  <% sid =user.school.split('-') %> <% sname=user.school.split('-') %>
+<%= sname[0] %> - <%= sname[1] %>
 </h3>
 <div class="gdlr-lms-course-price">
 <% if user.status == "Waitlisted" %>
