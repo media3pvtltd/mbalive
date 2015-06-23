@@ -6,13 +6,37 @@
 <!--<![endif]-->
 
 <head>
-    <meta name="google-site-verification" content="T3c7H-uv58SSAc9lbwTGjsr03JSZ8b94cfxB8HGD07o" />
+   <!--  <meta name="google-site-verification" content="T3c7H-uv58SSAc9lbwTGjsr03JSZ8b94cfxB8HGD07o" /> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale = 1.0" />
     <%= favicon_link_tag 'favicon.ico' %>
     <title>MBA Numbers</title>
-    
+    <%= metamagic %>
+    <%
+       if params[:controller] == "profile" && params[:action] == "index"
         
+         meta title: "Profile search | best schools in usa by state | Top ranked MBA Schools | in USA
+  ",
+         description: "mbaschool",
+         keywords: %w(MBA Education , MBA Numbers , MBA colleges in USA , MBA us ranking , best schools in usa by state , Top ranked MBA Schools)
+        elsif params[:controller] == "myadvices" && params[:action] == "myadvice"
+
+        meta title: "MY advice | best MBA Numbers | Top MBA Education | MBA colleges in USA | MBA Reviews | MBA Acceptance in usa
+
+  ",
+         description: "mbaschool",
+         keywords: %w(MBA Numbers , MBA Education , MBA colleges in USA , MBA ranking , best schools in usa by state , Top ranked MBA Schools , MBA Admissions , Top bussiness schools in America , MBA Reviews , MBA Acceptance , Bussiness school rankings , School Rankings , Bussiness School Rankings , Top Bussiness Schools in US , GPA for MBA , gmat MBA)
+
+
+                    
+       end
+
+
+
+    %>
+
+
+
     <%= stylesheet_link_tag @forum.nil? ? 'application' : 'forum', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>   
     <style type="text/css">
