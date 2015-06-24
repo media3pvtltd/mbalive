@@ -56,13 +56,6 @@ ActiveRecord::Schema.define(version: 20150613112002) do
     t.datetime "updated_at"
   end
 
-  create_table "colleges", force: true do |t|
-    t.string   "college"
-    t.integer  "state_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "comments", force: true do |t|
     t.string   "title"
     t.text     "comment"
@@ -119,7 +112,8 @@ ActiveRecord::Schema.define(version: 20150613112002) do
     t.string   "question"
     t.string   "friend"
     t.string   "status"
-    t.integer  "experience"
+    t.string   "school"
+    t.string   "experience"
     t.string   "commitschool"
     t.string   "exp"
     t.string   "descion"
@@ -152,12 +146,6 @@ ActiveRecord::Schema.define(version: 20150613112002) do
     t.datetime "updated_at"
     t.integer  "topic_id"
     t.integer  "member_id"
-  end
-
-  create_table "rasts", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "refinery_announcements", force: true do |t|
@@ -366,7 +354,7 @@ ActiveRecord::Schema.define(version: 20150613112002) do
   create_table "schools", force: true do |t|
     t.string   "business_school"
     t.string   "university"
-    t.string   "name"
+    t.string   "state"
     t.string   "city"
     t.integer  "US_News_Ranking"
     t.integer  "BW"
