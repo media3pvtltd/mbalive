@@ -2,7 +2,7 @@ class ForumsController < ApplicationController
 layout 'homepage'
   before_filter :change_style
   # before_filter :authenticate_user
-  before_action :authenticate_user, :except => [:index]
+  before_action :authenticate_user, :except => [:index, :topics]
 
 
   def index

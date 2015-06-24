@@ -1,6 +1,5 @@
 <div class="gdlr-lms-container gdlr-lms-container">
                     <div class="gdlr-lms-item">
-                     
                 <div class="nine column" style="padding:10px">
                     <%= form_tag schools_create_path, :class => 'gdlr-lms-form' do |f| %>
 
@@ -11,7 +10,7 @@
                             <option value="" >-----------Select School----------</option>
                             <% @school_name.each do |sn| %>
                                  <option value="<%= sn.university%>-<%= sn.business_school%>-<%= sn.id %>">
-                                       <%= sn.university %>-<%= sn.business_school  %> 
+                                       <%= sn.university %>-<%= sn.business_school  %>,<%= sn.city %> 
                                  </option>
                             <% end %>
                                   
@@ -42,12 +41,10 @@
                                 <option value="">-Select-</option>
                                 <option value="Full Time">Full Time</option>
                                 <option value="Part Time">Part Time</option>
+                                <option value="Executive">Executive</option>
                         
                             </select>
                         </span></p>
-                        
-                        
-
                         <p class="gdlr-lms-half-left">
             <label >Round's Applied</label>
             <span class="gdlr-lms-combobox" style="width: 158px;">
@@ -62,13 +59,15 @@
                     <p class="gdlr-lms-half-left">
             <label >Date Applied</label>
             <span class="gdlr-lms-combobox" >
-                       <input type="text" name="received" id="received"  placeholder="DD/MM/YYYY" style="  background-color: white;" type="text" onfocus="(this.type='date')" >                  
+                       <input type="text" name="received" id="received"  placeholder="DD/MM/YYYY" style="  background-color: white;" type="text" onfocus="(this.type='date')" > 
+                       
+                                               
                     </span> </p>
                    <p class="gdlr-lms-half-left">                                                 
             <label>Scholarship</label>
             <input type="text" name="scholarship"  value=""  style="width:87%">&nbsp<span><i class="gdlr-icon icon-dollar" style="color: #333333; font-size: 20px; "></i></span></p>
             <p class="gdlr-lms-half-left">
-            <label><span>Interview Date*</span></label>
+            <label><span>Interview Scheduled ?</span></label>
              
             <input type="radio" name="interview" id="intqyes" value="yes" style=" ">&nbspYes
         <input type="radio" name="interview" id="intqno"  value="no" >&nbspNo
@@ -85,14 +84,12 @@
             <span class="gdlr-lms-combobox" >
             
                         <input type="text" name="interviewdate" id="interviewdate" placeholder="DD/MM/YYYY" style="  background-color: white;" type="text" onfocus="(this.type='date')" >
-                                  
-    
                         </span></p>
-            <p class="gdlr-lms-half-left">
+            <p class="gdlr-lms-half-left" style="display:none;" id="intdate2" style="  width: 100%;">
             <label >Date Decision Received</label>
             <span class="gdlr-lms-combobox" >
-                      <!--  <input type="date" name="descion" id="descion"  placeholder="MM/DD/YYYY"  >  -->
-                        <input placeholder="DD/MM/YYYY" name="descion" class="textbox-n" type="text" onfocus="(this.type='date')"  id="descion" style="  background-color: white;">                 
+                      
+                        <input placeholder="DD/MM/YYYY" name="descion" class="textbox-n" type="text" onfocus="(this.type='date')"  id="descion" style="  background-color: white;">               
                     </span> </p>
                      <div style="width:100%;  text-align: center;">
                           <input type="submit" class="gdlr-button medium" style="color:#ffffff; background-color:#4f8ed6; " value="Add Application" />
@@ -107,7 +104,7 @@
 </div>
 <div class="gdlr-sidebar gdlr-right-sidebar two columns" >
         <div class="google_adsense skyscraper" style="padding-left: 18px;">
-         <div class="profile_blog_rgt" style="border:none">
+         <div class="profile_blog_lft" style="border:none">
                         <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
 
                         
@@ -115,6 +112,17 @@
                         </div>
         </div>
         
+    </div>
+    <div class="twelve column" style="text-align:center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal 2 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6430317842295107"
+     data-ad-slot="9645169322"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     </div>
 </div>
 </div>
@@ -127,13 +135,27 @@ $(document).ready(function(){
  $('#intqyes').click(function(){
         
          $('#intdate').css('display','block');
-            
+        $('#intdate2').css('display','block');
         
         
  });
  $('#intqno').click(function(){
         
      $('#intdate').css('display','none');
+     $('#intdate2').css('display','none');
  });
 });
 </script>
+
+
+<script type='text/javascript' src='http://themes.goodlayers.com/clevercourse/wp-content/plugins/the-events-calendar/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js?ver=3.2'></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tribe_js_config = {"permalink_settings":"\/%postname%\/","events_post_type":"tribe_events","events_base":"http:\/\/themes.goodlayers.com\/clevercourse\/events\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://themes.goodlayers.com/clevercourse/wp-content/plugins/the-events-calendar/resources/tribe-events.min.js?ver=3.9.3'></script>
+<script type='text/javascript' src='http://themes.goodlayers.com/clevercourse/wp-content/plugins/the-events-calendar/resources/tribe-events-bar.min.js?ver=3.9.3'></script>
+
+

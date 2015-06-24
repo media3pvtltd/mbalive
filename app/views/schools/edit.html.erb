@@ -8,19 +8,18 @@
                             <select name="school" id="school"  style="width: 100%;">
                             <% @school_name.each do |sn| %>
                                  <option value=" <%=sn.university%>-<%= sn.business_school   %>-<%= sn.id %> ">
-                                          <%= sn.university%>-<%= sn.business_school  %> 
+                                          <%= sn.university%>-<%= sn.business_school  %>,<%= sn.city %> 
                                  </option>
                             <% end %>
-                                  
                             </select>
                             <script type="text/javascript">
-    for(var i=0;i<document.getElementById('school').length;i++)
-    {
-        if(document.getElementById('school').options[i].value=="<%= @app_data.school  %>")
-        {
-            document.getElementById('school').options[i].selected=true
-        }
-    }          
+                 for(var i=0;i<document.getElementById('school').length;i++)
+                {
+                if(document.getElementById('school').options[i].value=="<%= @app_data.school  %>")
+                 {
+                 document.getElementById('school').options[i].selected=true
+                }
+                }          
     </script>
                         
                 </span></p>
@@ -103,7 +102,7 @@
             <label>Scholarship</label>
             <input type="text" name="scholarship" placeholder='$' value="<%= @app_data.scholarship %>" style="width:86%"> &nbsp<span><i class="gdlr-icon icon-dollar" style="color: #333333; font-size: 20px; "></i></p>
              <p class="gdlr-lms-half-left">
-            <label >Interview Date*</label>
+            <label >Interview Scheduled ?</label>
             
             <input type="radio" name="interview" id="intqyes" value="yes" <% if @app_data.interview =="yes"  %> <%= "checked==checked" %> <% end %> >&nbspYes
 <input type="radio" name="interview" id="intqno" style="margin-left:10px;" value="no" <% if @app_data.interview =="no"  %> <%= "checked==checked" %> <% end %> >&nbspNo
@@ -130,7 +129,7 @@
                                 
     
                         </span></p>
-            <p class="gdlr-lms-half-left">
+            <p class="gdlr-lms-half-left" style="display:none;" id="intdate2" style="  width: 100%;">
             <label >Date Decision Received</label>
             <span class="gdlr-lms-combobox" >
                        <input type="date" name="descion" id="interviewdate" value="<%= @app_data.descion %>">               
@@ -148,12 +147,23 @@
 </div>
 			<div class="gdlr-sidebar gdlr-right-sidebar two columns" >
         <div class="google_adsense skyscraper" style="padding-left: 18px;">
-         <div class="profile_blog_rgt" style="border:none">
+         <div class="profile_blog_lft" style="border:none">
                         <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>                        
         
                         </div>
         </div>
         
+    </div>
+    <div class="twelve column" style="text-align:center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal 2 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6430317842295107"
+     data-ad-slot="9645169322"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     </div>
         </div>
 </div>
@@ -163,6 +173,7 @@
     $('#intqyes').click(function(){
         
             $('#intdate').css('display','block');
+            $('#intdate2').css('display','block');
             
         
         
@@ -170,6 +181,7 @@
     $('#intqno').click(function(){
         
         $('#intdate').css('display','none');
+        $('#intdate2').css('display','none');
     });
     <% if @app_data.interview =="yes"  %> 
         $('#intdate').css('display','block');
