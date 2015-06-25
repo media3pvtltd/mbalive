@@ -14,6 +14,22 @@
 	 <div class="gdlr-item gdlr-divider-item"></div>
 <div class="gdlr-lms-container gdlr-lms-container">
         <div class="gdlr-lms-item">
+        <div class="gdlr-lms-item">
+         <div class="gdlr-sidebar gdlr-right-sidebar one columns" style="margin-top:100px; ">
+        <div class="google_adsense skyscraper" style="padding-left: 18px;">
+         <div class="profile_blog_lft" style="border:none">
+                        <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+                        <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+                        <%#= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+
+                        <%#= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+                        
+        
+                        </div>
+        </div>
+        
+    </div>
+    <div class="one column"></div>
 		<div class="with-sidebar-wrapper gdlr-type-right-sidebar">
 				<div class="with-sidebar-container container">
 					<div class="with-sidebar-left eight columns">
@@ -100,17 +116,17 @@ color: #a4a4a4;" >Back</a>
 			<div class="comment-avatar">
 				<%@member = Member.find(mydata.member_id) %>
 
-						<% unless @member.image.nil? %>
-                <%= image_tag @member.image.url, :style => "width:60px;height:60px; margin-left: 18px;" %>
-                <%else %>
-                <img src="/assets/profile.png" alt="Edit Entry" style="width:60px;height:60px;" />
+						<%#unless @member.image.nil?%>
+                <%#= image_tag @member.image.url, :style => "width:60px;height:60px; margin-left: 18px;" %>
+                <%#else %>
+               <!--  <img src="/assets/profile.png" alt="Edit Entry" style="width:60px;height:60px;" /> -->
                 
                 
-            <% end %>
+            <%# end %>
 			</div>
 			<div class="comment-body">
 				<header class="comment-meta" style="  text-align: left;">
-					<div class="comment-author gdlr-title" style="text-align: left;"><%= @member.username %></div>
+					<div class="comment-author gdlr-title" style="text-align: left;  font-size: 16px;"><%= @member.username %></div>
 					<div class="comment-time">
 						<i class="icon-time"></i>
 						<a href="">
@@ -183,14 +199,17 @@ color: #a4a4a4;" >Back</a>
 					</div>
 		<div class="one columns gdlr-item-start-content">
 						<div class="google_adsense skyscraper" style="padding-left: 18px;">
+						<div class="profile_blog_lft" style="border:none">
 						<%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+
+						<%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+						
+		
 						</div>
-						<div class="google_adsense skyscraper" style="padding-left: 18px;">
-						<%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
 						</div>
 					</div>
 	</div>
-	<div class="twelve column" >
+	<div class="twelve column" style="text-align:center">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal 2 -->
 <ins class="adsbygoogle"
