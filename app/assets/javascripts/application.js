@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery-migrate
 //= require jquery.form.min
 //= require jquery.ui.datepicker.min
@@ -29,7 +28,5 @@
 //= require gdlr-script
 //= require masterslider.min
 //= require jquery.noty
-//= require nprogress
-//= require nprogress-turbolinks
 //= require owl.carousel
 
