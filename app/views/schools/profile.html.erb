@@ -1,6 +1,17 @@
 <div class="gdlr-lms-container gdlr-lms-container">
                     <div class="gdlr-lms-item">
-                <div class="nine column" style="padding:10px">
+                    <div class="gdlr-sidebar gdlr-right-sidebar two columns" >
+        <div class="google_adsense skyscraper" style="padding-left: 18px;">
+         <div class="profile_blog_lft" style="border:none">
+                        <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+
+                        
+        
+                        </div>
+        </div>
+        
+    </div>
+                <div class="seven column" style="padding:10px">
                     <%= form_tag schools_create_path, :class => 'gdlr-lms-form' do |f| %>
 
                     <p class="gdlr-lms-half-left">
@@ -59,7 +70,8 @@
                     <p class="gdlr-lms-half-left">
             <label >Date Applied</label>
             <span class="gdlr-lms-combobox" >
-                       <input type="text" name="received" id="received"  placeholder="MM/DD/YYYY" style="  background-color: white;" type="text" onfocus="(this.type='date')" > 
+            <input type="date"  name="received" id="received" style="  background-color: white;">
+                      <!--  <input type="text" name="received" id="received"  placeholder="MM/DD/YYYY" style="  background-color: white;" type="text" onfocus="(this.type='date')" >  -->
                        
                                                
                     </span> </p>
@@ -82,14 +94,14 @@
             
             
             <span class="gdlr-lms-combobox" >
-            
-                        <input type="text" name="interviewdate" id="interviewdate" placeholder="MM/DD/YYYY" style="  background-color: white;" type="text" onfocus="(this.type='date')" >
+             <input type="date"  name="interviewdate" id="interviewdate" style="  background-color: white;">
+                        <!-- <input type="text" name="interviewdate" id="interviewdate" placeholder="MM/DD/YYYY" style="  background-color: white;" type="text" onfocus="(this.type='date')" > -->
                         </span></p>
             <p class="gdlr-lms-half-left" style="display:none;" id="intdate2" style="  width: 100%;">
             <label >Date Decision Received</label>
             <span class="gdlr-lms-combobox" >
-                      
-                        <input placeholder="MM/DD/YYYY" name="descion" class="textbox-n" type="text" onfocus="(this.type='date')"  id="descion" style="  background-color: white;">               
+                       <input type="date"  name="descion" id="descion" style="  background-color: white;">
+                        <!-- <input placeholder="MM/DD/YYYY" name="descion" class="textbox-n" type="text" onfocus="(this.type='date')"  id="descion" style="  background-color: white;"> -->               
                     </span> </p>
                      <div style="width:100%;  text-align: center;">
                           <input type="submit" class="gdlr-button medium" style="color:#ffffff; background-color:#4f8ed6; " value="Add Application" />

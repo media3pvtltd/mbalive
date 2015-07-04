@@ -41,14 +41,11 @@
     end
 
   end
-
-
-
   def compose
-     UserMailer.sent(params).deliver!
-     @outbox = Outbox.new(:name => params[:name], :subject => params[:subject], 
+     # UserMailer.sent(params).deliver!
+      @outbox = Outbox.new(:name => params[:name], :subject => params[:subject], 
       :message => params[:message], :member_id => session[:user_id], :from => params[:from],:sender_at => params[:sender_at],:receiver_at => params[:receiver_at])
-     @outbox.from = current_user.email
+      @outbox.from = current_user.email
       if @outbox.save
         flash[:success] = 'Message send sucessfully'
         redirect_to  :action => 'mailbox' , :alert => "Message send sucessfully"
@@ -70,9 +67,6 @@
     end
 
   end
-
-
-
   def reply_params
       params.permit(:outbox_id, :message)
       
