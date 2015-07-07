@@ -5,11 +5,24 @@
   </span>
   <span class='actions'>
     
-      <%= action_icon(:preview, refinery.faqs_faq_path(faq), t('.view_live_html')) %>
+      <%#= action_icon(:preview, refinery.faqs_faq_path(faq), t('.view_live_html')) %>
     
-    <%= action_icon(:edit,    refinery.edit_faqs_admin_faq_path(faq), t('.edit') ) %>
-    <%= action_icon(:delete,  refinery.faqs_admin_faq_path(faq), t('.delete'),
+    <%#= action_icon(:edit,    refinery.edit_faqs_admin_faq_path(faq), t('.edit') ) %>
+    <%#= action_icon(:delete,  refinery.faqs_admin_faq_path(faq), t('.delete'),
       { class: "cancel confirm-delete",
         data: {confirm: t('message',  scope: 'refinery.admin.delete', title: faq.question)}}  ) %>
+
+
+
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.faqs_faq_path(faq),
+        :title => t('.view_live_html'),:target => "_blank" %>
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_faqs_admin_faq_path(faq),
+         :title => t('.edit') %>
+   <%= link_to refinery_icon_tag("delete.png"), refinery.faqs_admin_faq_path(faq),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :data => {:confirm => t('message', :scope => 'refinery.admin.delete')},
+        :method => :delete %>
   </span>
 </li>
