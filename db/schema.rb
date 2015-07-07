@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613112002) do
+ActiveRecord::Schema.define(version: 20150707042202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150613112002) do
     t.integer  "user_id"
     t.string   "university"
     t.string   "interview"
+    t.integer  "schoolid"
   end
 
   create_table "bookmarks", force: true do |t|
@@ -52,6 +53,13 @@ ActiveRecord::Schema.define(version: 20150613112002) do
   create_table "breakings", force: true do |t|
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "colleges", force: true do |t|
+    t.string   "college"
+    t.integer  "state_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -74,6 +82,13 @@ ActiveRecord::Schema.define(version: 20150613112002) do
     t.datetime "updated_at"
   end
 
+  create_table "faqs", force: true do |t|
+    t.string   "question"
+    t.text     "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "forums", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -85,6 +100,13 @@ ActiveRecord::Schema.define(version: 20150613112002) do
     t.integer  "cuser_id"
     t.integer  "puser_id"
     t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "maps", force: true do |t|
+    t.string   "title"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -112,8 +134,7 @@ ActiveRecord::Schema.define(version: 20150613112002) do
     t.string   "question"
     t.string   "friend"
     t.string   "status"
-    t.string   "school"
-    t.string   "experience"
+    t.integer  "experience"
     t.string   "commitschool"
     t.string   "exp"
     t.string   "descion"
@@ -148,6 +169,12 @@ ActiveRecord::Schema.define(version: 20150613112002) do
     t.integer  "member_id"
   end
 
+  create_table "rasts", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "refinery_announcements", force: true do |t|
     t.string   "title"
     t.integer  "photo_id"
@@ -177,6 +204,14 @@ ActiveRecord::Schema.define(version: 20150613112002) do
   create_table "refinery_breakings", force: true do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "refinery_faqs", force: true do |t|
+    t.string   "question"
+    t.text     "answer"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -354,7 +389,7 @@ ActiveRecord::Schema.define(version: 20150613112002) do
   create_table "schools", force: true do |t|
     t.string   "business_school"
     t.string   "university"
-    t.string   "state"
+    t.string   "name"
     t.string   "city"
     t.integer  "US_News_Ranking"
     t.integer  "BW"

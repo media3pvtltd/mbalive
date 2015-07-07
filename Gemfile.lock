@@ -62,6 +62,9 @@ PATH
     refinerycms-blogposts (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 3.0.0)
+    refinerycms-faqs (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 3.0.0)
     refinerycms-forums (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 3.0.0)
@@ -330,6 +333,7 @@ DEPENDENCIES
   refinerycms-acts-as-indexed (~> 2.0, >= 2.0.0)
   refinerycms-announces!
   refinerycms-blogposts!
+  refinerycms-faqs!
   refinerycms-forums!
   refinerycms-newcasts!
   refinerycms-testimonials!

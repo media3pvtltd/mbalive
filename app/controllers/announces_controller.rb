@@ -17,4 +17,13 @@ class AnnouncesController < ApplicationController
   def single
     @announce_data=Refineryannounce.find_by_id(params[:id])
   end
+
+  def faq
+    @title = "FAQ"
+    @faq = Refineryfaq.order(created_at: :desc).paginate(:page => params[:page], :per_page => 4)
+  end
+
+  def faq_single
+    @faq_data=Refineryfaq.find_by_id(params[:id])
+  end
 end

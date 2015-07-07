@@ -111,7 +111,7 @@
 
                     <p class="gdlr-lms-half-left">                                                 
             <label>Scholarship</label>
-            <input type="text" name="scholarship" placeholder='$' value="<%= @app_data.scholarship %>" style="width:86%"> &nbsp<span><i class="gdlr-icon icon-dollar" style="color: #333333; font-size: 20px; "></i></p>
+            <input type="text" name="scholarship" placeholder='$' value="<%= @app_data.scholarship %>" style="width:95%"> &nbsp</p>
              <p class="gdlr-lms-half-left">
             <label >Interview Scheduled ?</label>
             
@@ -119,24 +119,13 @@
 <input type="radio" name="interview" id="intqno" style="margin-left:10px;" value="no" <% if @app_data.interview =="no"  %> <%= "checked==checked" %> <% end %> >&nbspNo
             
                         </p>
-                        <p class="gdlr-lms-half-left" style="display:none;" id="intdate" style="  width: 100%;">
-            
-            <label >Interview Date</label>
-            
-            
-            <span class="gdlr-lms-combobox" >
-            
-                        <input type="date" name="interviewdate" id="interviewdate" value="" >
-                                  
-    
-                        </span></p>
                          <p class="gdlr-lms-half-left" style="display:none;" id="intdate" style="  width: 100%;">
             
             <label >Interview Date</label>
             
             
             <span class="gdlr-lms-combobox" >
-             <input type="date" name="interviewdate" id="interviewdate" style="width: 198px;" placeholder="MM/DD/YYYY" value="<%= @app_data.interviewdate %>">
+             <input type="date" name="interviewdate" id="interviewdate" style="width: 291px;" value="<%= @app_data.interviewdate %>">
                                 
     
                         </span></p>

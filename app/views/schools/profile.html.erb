@@ -20,13 +20,11 @@
            <select  name="school" id="school" style="width:100% ">
                             <option value="" >-----------Select School----------</option>
                             <% @school_name.each do |sn| %>
-                                 <option value="<%= sn.university%>-<%= sn.business_school%>-<%= sn.id %>">
+                                <option value="<%= sn.university%>-<%= sn.business_school%>-<%= sn.id %>">
                                        <%= sn.university %>-<%= sn.business_school  %>,<%= sn.city %> 
                                  </option>
                             <% end %>
-                                  
                             </select>
-            
                         </span></p>
 
                         <p class="gdlr-lms-half-left">
@@ -77,7 +75,7 @@
                     </span> </p>
                    <p class="gdlr-lms-half-left">                                                 
             <label>Scholarship</label>
-            <input type="text" name="scholarship"  value=""  style="width:87%">&nbsp<span><i class="gdlr-icon icon-dollar" style="color: #333333; font-size: 20px; "></i></span></p>
+            <input type="text" name="scholarship"  value=""  style="  width: 95%;" placeholder="$">&nbsp</p>
             <p class="gdlr-lms-half-left">
             <label><span>Interview Scheduled ?</span></label>
              
