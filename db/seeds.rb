@@ -32,3 +32,6 @@ Refinery::Announces::Engine.load_seed
 
 # Added by Refinery CMS Faqs extension
 Refinery::Faqs::Engine.load_seed
+
+# Added by Refinery CMS Abouts extension
+Refinery::Abouts::Engine.load_seed

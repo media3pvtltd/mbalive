@@ -85,3 +85,4 @@ gem 'owlcarousel-rails'
 gem "dynamic_sitemaps"
 gem 'metamagic'
 gem 'refinerycms-faqs', path: 'vendor/extensions'
+gem 'refinerycms-abouts', path: 'vendor/extensions'

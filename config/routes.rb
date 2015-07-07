@@ -66,6 +66,7 @@
   get 'auth/:provider/callback' => 'authentications#create' 
   get 'logout' => 'authentications#destroy'
   get 'announces/faq'
+  get 'announces/about'
   get 'announces/faq_single/:id' => 'announces#faq_single', as: 'announces_faq_single'
   get 'members/index'
   

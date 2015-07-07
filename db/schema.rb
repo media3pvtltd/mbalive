@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707042202) do
+ActiveRecord::Schema.define(version: 20150707104951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "announces", force: true do |t|
     t.string   "title"
@@ -171,6 +178,14 @@ ActiveRecord::Schema.define(version: 20150707042202) do
 
   create_table "rasts", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "refinery_abouts", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
