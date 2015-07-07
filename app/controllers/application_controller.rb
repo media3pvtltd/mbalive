@@ -26,6 +26,16 @@ class ApplicationController < ActionController::Base
         
 
     end
+
+    def checkappliedschool
+      
+       @appcount=Application.where(["school = ? and user_id= ?", params[:school], current_user.id])
+       
+       if @appcount.count > 0
+          flash[:notice] = "You have already applied to that school. Select another"
+          redirect_to schools_profile_path
+       end
+    end
     def check_session
       redirect_to profile_index_path, :notice => 'user already logged in' unless session[:user_id].nil?
     end

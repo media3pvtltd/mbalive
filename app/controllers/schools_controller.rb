@@ -2,6 +2,7 @@ class SchoolsController < ApplicationController
 	layout 'schools'
   before_action :authenticate_user, :only => [:profile, :create, :destroy, :update, :edit]
   before_action :check_auth, :only => [:edit, :update, :destroy]
+  before_action :checkappliedschool, :only => [:create]
   def index
   	@title="MBA Schools"
   	# @schools= School.paginate(:page => params[:page], :per_page => 10)
@@ -78,6 +79,9 @@ class SchoolsController < ApplicationController
         redirect_to schools_profile_path
       elsif params[:program].empty?
         flash[:error]="Program can't be blank"
+        redirect_to schools_profile_path
+        elsif params[:received].empty?
+        flash[:error]="Date Applied can't be blank"
         redirect_to schools_profile_path
       else
         school_app=Application.new(req_params)
