@@ -89,7 +89,7 @@ end
        <i class="icon-location-arrow" style="color: white; font-size: 16px;"></i><a href="<%= mailboxes_newest_path %>">Send Message</a></div>
         <div class="author-info url"><i class="icon-plus-sign" style="color: white; font-size: 16px; "></i><a href="<%= schools_profile_path %>">Add School</a>
         </div>
-        <div class="author-info url"><div class="mtbtn" title="Post a new topic" style="display:inline-block"><i class="icon-edit" style="color: white; font-size: 16px;"></i>
+        <div class="author-info url"><div class="mtbtn" title="" style="display:inline-block"><i class="icon-edit" style="color: white; font-size: 16px;"></i>
       <a  data-rel="gdlr-lms-lightbox" data-lb-open="login-form" style="color: rgb(204, 204, 204); ">Edit Profile</a>
     </div>
         </div>
@@ -310,11 +310,14 @@ end
                            
                               <td id="td" style="font-size:9px; text-align: center;padding: 6px;">
                                          <%if ad.descion.nil? %>           
-                               Not Decided
+                               <%="Not Decided" %><br>
+                               <a href="<%=schools_edit_path(ad.id)%>">
+                            <i class="gdlr-icon icon-edit" style="color: blue; font-size: 14px; "title="Date Decision Received ?"></i>
                                <%else %>
                               
                                 <%= ad.descion.strftime("%m/%d/%Y") %>
-                               <%end %> 
+                               <%end %> <br>
+                               </a>
                                           </td>
                                           </tr>
 <%end %>
