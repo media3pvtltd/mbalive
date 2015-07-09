@@ -40,7 +40,7 @@
   
   def compose
      # UserMailer.sent(params).deliver!
-     binding.pry
+     
      @inbox = Outbox.where('name=?',Member.find(session[:user_id]).email)
       @outbox = Outbox.new(:name => params[:name], :subject => params[:subject], 
       :message => params[:message], :member_id => session[:user_id], :from => params[:from],:sender_at => params[:sender_at],:receiver_at => params[:receiver_at])
