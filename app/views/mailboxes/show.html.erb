@@ -1,26 +1,83 @@
 <div class="gdlr-lms-content">
-	<div class="two columns"><%= ad_unit(:skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %></div>
-	<div class="eight columns">
+	<div class="gdlr-sidebar gdlr-right-sidebar two columns" >
+		<div class="google_adsense skyscraper" style="padding-left: 18px;">
+		 <div class="profile_blog_lft" style="border:none">
+						<%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+
+						<%#= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+						
+		
+						</div>
+		</div>
+		
+	</div>
+	<div class="one column"></div>
+	<div class="seven columns">
 			<div class="gdlr-item gdlr-tab-item horizontal">
-			<div class="tab-title-wrapper">
-			<h4 class="tab-title active">
-			<i class="icon-inbox"></i><span>Inbox</span></h4>
-			<h4 class="tab-title ">
-			<i class="icon-share-alt"></i><a href="<%=mailboxes_mailbox_path %>">Outbox</a></h4><a href="<%=mailboxes_mailbox_path %>"><h4 class="tab-title "><i class="icon-edit"></i>Compose</h4></a></div><div class="tab-content-wrapper"><div class="tab-content active">
+			<div class="tab-title-wrapper"><a href="<%=mailboxes_mailbox_path %>"><h4 class="tab-title active"><i class="icon-inbox"></i><span>Inbox</span></h4></a><a href="<%=mailboxes_outbox_path %>"><h4 class="tab-title"><i class="icon-share-alt"></i><span>Outbox</span></h4></a><a href="<%=mailboxes_newest_path %>"><h4 class="tab-title"><i class="icon-edit"></i><span>Compose</span></h4></a></div><div class="tab-content-wrapper">
+			<i class="icon-chevron-left" ></i><div class="tab-content-wrapper"><div class="tab-content active">
 			<div>
 			 <p><a href="/mailboxes/mailbox" style="color:blue; font-family:arial">Back to inbox</a><br>
 			 </p>
-			 <p><a href="#">Mba Numbers</a><br></p>	
-			 <div class="gdlr-divider thick"></div>
+			 <p><a href="#"><b><%=@inbox.subject%></b> </a>
+			 <hr>
+			 </p>	
 			 
-            <p style="color:black"><%=@inbox.subject%></p>
+			 <p style="  color: #074E8C;">From <%=@inbox.name %></p>
+           
        
 						<%=@inbox.message %>
-				<div class="gdlr-divider dotted"></div>
+				
 			</div>
 			</div>
 			</div>
+			<%=form_tag mailboxes_compose_path, :class =>'gdlr-item gdlr-content-item gdlr-lms-form' do |f| %>
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="8">
+<input type="hidden" name="_wpcf7_version" value="4.0.3">
+<input type="hidden" name="_wpcf7_locale" value="en_US">
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f8-o1">
+<input type="hidden" name="_wpnonce" value="87428653a9">
+</div>
+<input type="hidden" name="sender_at" value="TRUE">
+					<input type="hidden" name="receiver_at" value="TRUE">
+<input type="hidden" name="name" value=<%= @inbox.from %> >
+<input type="hidden" name="from" value=<%=@inbox.name %>>
+<input type="hidden" name="subject" value=<%=@inbox.subject%>>
+
+<p>Your Message<br>
+    <span class="wpcf7-form-control-wrap your-message"><%= text_area_tag 'message' , "",class: 'form-control' ,placeholder: 'Message' %></span></span> </p>
+<p><%= submit_tag 'Send',class: 'wpcf7-form-control wpcf7-submit',name: 'send' %></p>
+<%end %>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form>
 			</div>
+
 			</div>
 			<div class="clear"></div>
+
 			</div>
+			<div class="gdlr-sidebar gdlr-right-sidebar two columns" >
+		<div class="google_adsense skyscraper" style="padding-left: 18px;">
+		 <div class="profile_blog_lft" style="border:none">
+						<%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+
+
+		
+						</div>
+		</div>
+		
+	</div>
+
+	</div>
+			<div class="twelve column" style="text-align:center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal 2 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6430317842295107"
+     data-ad-slot="9645169322"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+	<div class="clear"></div>

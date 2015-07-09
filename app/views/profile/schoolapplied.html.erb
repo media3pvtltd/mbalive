@@ -58,7 +58,7 @@
 
 												
 						<td colspan="3" style="padding:10px"><%a= update.school.split('-') %>
-							<%= a[0] %>- <%=a[1] %>
+							 <%=a[1] %>-<%= a[0] %>
 						</td>	
 
 
@@ -90,7 +90,7 @@
 
 												
 						<td colspan="3" style="padding:10px"><%a= update.school.split('-') %>
-							<%= a[0] %>- <%=a[1] %>
+							 <%=a[1] %>-<%= a[0] %>
 						</td>	
 
 
@@ -129,6 +129,7 @@
 				</div>
 		
 	</div>
+	<%= will_paginate  @updates, :class => 'gdlr-pagination'%> 
 		<div class="clear"></div>
 		<div class="twelve column" style="text-align:center" >
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -142,8 +143,7 @@
 </script>
 	</div>
 		<div class="gdlr-item gdlr-divider-item"></div>
-		<!-- <%# = will_paginate  @appliedschool, :class => 'gdlr-pagination'%> -->
-		
+		 
 </div>
 </div>
 </div>

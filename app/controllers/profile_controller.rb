@@ -89,19 +89,19 @@ before_action :check_session, :only => [:login, :create]
   end
   def viewUsers
     @title= 'Search By Name'
-    @users=Member.where("username LIKE ? ", "%#{params[:username]}%")  
+    @users=Member.where("username LIKE ? ", "%#{params[:username]}%").paginate(:page => params[:page], :per_page => 20)  
  end
 
  def searchuser
     @title= 'Search By Name'
-    @users=Member.where("username LIKE ? ", "%#{params[:username]}%").paginate(:page => params[:page], :per_page => 12)  
+    @all_mebers=Member.where("username LIKE ? ", "%#{params[:username]}%").paginate(:page => params[:page], :per_page => 20)  
     # redirect_to profile_name_path
     render 'name'
     
  end
 def schoolapplied
 @title = "Search by schools Applied"
-    @updates = Application.all.paginate(:page => params[:page], :per_page => 12)
+    @updates = Application.all.paginate(:page => params[:page], :per_page => 20)
     @all_mebers=Member.order('created_at DESC')
 
   
@@ -109,7 +109,7 @@ end
 
 def searchschool
   @title = "Search by schools Applied"
-  @appliedschool=Application.where("school LIKE ?","%#{params[:schoolname]}%").paginate(:page => params[:page], :per_page => 12)
+  @updates=Application.where("school LIKE ?","%#{params[:schoolname]}%").paginate(:page => params[:page], :per_page => 20)
   render 'schoolapplied'
 
 end
@@ -348,7 +348,7 @@ end
   
   def topusers
     @title="Top Users"
-    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 12)
+    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
     
     # Client.all(:order => "created_at DESC")
     # Client.all(:order => "created_at DESC")
@@ -368,7 +368,7 @@ end
 
   def profileupdates
     @title = "Profile Updates"
-    @updates = Application.all.paginate(:page => params[:page], :per_page => 12)
+    @updates = Application.all.paginate(:page => params[:page], :per_page => 20)
     @all_mebers=Member.order('created_at DESC')
     
     # binding.pry
@@ -397,7 +397,7 @@ end
   end
   def name
     @title="Search By Name"
-    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 12)
+    @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
   end
   def commitschool
     @commitschool=Member.find(params[:cuurentuserid]).update(:commitschool => params[:schoolname])
