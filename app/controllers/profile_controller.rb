@@ -370,13 +370,10 @@ end
     @title = "Profile Updates"
     @updates = Application.all.paginate(:page => params[:page], :per_page => 20)
     @all_mebers=Member.order('created_at DESC')
-    
-    # binding.pry
   end
 
   def like
     @a=params[:cuserid]
-
     @user= Like.new(:cuser_id => params[:cuserid],:puser_id => params[:buserid],:count => "1")
     if @user.save
       render json: true

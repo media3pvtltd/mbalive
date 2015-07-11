@@ -20,7 +20,7 @@
 						%> 
 <div class="gdlr-lms-course-content">
 <h3 class="gdlr-lms-course-title">
-<a href="<%= static_profile_path(user.user_id) %>"><%=@user.username %></a>
+<a href="<%= static_profile_path(@user.username) %>"><%=@user.username %></a>
 
 GPA: <%= number_with_precision(@user.gpa, precision: 2)  %><br>GMAT: <%=@user.gmat_score %><br><%=user.status %>  at  <% sid =user.school.split('-') %> <% sname=user.school.split('-') %>
 <%= sname[0] %> - <%= sname[1] %>

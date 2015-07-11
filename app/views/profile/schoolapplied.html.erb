@@ -53,7 +53,7 @@
 			<% @updates.each do |update| %>
 							<tr>
 						<td colspan="3" style="padding:10px">
-							<a href="<%= static_profile_path(update.user_id) %>"> <%= Member.find(update.user_id).username  %></a>
+							<a href="<%#= static_profile_path(update.user_id) %>"> <%= Member.find(update.user_id).username  %></a>
 						</td> 
 
 												
