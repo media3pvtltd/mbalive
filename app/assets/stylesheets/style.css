@@ -73,7 +73,7 @@ p{ margin-bottom: 20px; }
 ul, ol{ margin-bottom: 20px; margin-left: 30px; }
 body { line-height: 1.7; font-family: Arial; overflow-y: scroll;
 	-webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; }
-h1, h2, h3, h4, h5, h6 { line-height: 1.5; margin-bottom: 18px; font-weight: 600; }	
+h1, h2, h3, h4, h5, h6 { line-height: 1.5; margin-bottom: 18px; font-weight: 600;font-family: Arial }	
 
 /*----------------------------------------------------------------------*/
 /*---------------             THEME STYLE             ------------------*/
