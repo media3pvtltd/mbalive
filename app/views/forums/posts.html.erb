@@ -26,7 +26,7 @@
 	<div class="inner">
 	<div class="postbody">
 		<h3 class="first"><img src="" width="16" height="16" alt=""> <a href="#p3">Post Title</a></h3>
-		<p class="author"><a href=""><i class="fa fa-file grey"></i></a>by <strong><a href="<%=static_profile_path(p.member.username) %>" style="color: #AA0000;" class="username-coloured"><%=p.member.username %></a></strong> » <%=p.created_at.strftime('%A, %d %b %Y %l:%M %p') %> </p>
+		<p class="author"><a href=""><i class="fa fa-file grey"></i></a>by <strong><a href="<%=static_profile_path(p.member.username) %>" style="color: #AA0000;" class="username-coloured"><%=p.member.username %></a></strong> » <%=p.created_at.strftime('%A, %b %d %Y %l:%M %p') %> </p>
 		<div class="content">
 			<%=p.content %>
 		</div>
@@ -47,7 +47,7 @@
 	</dt>
 	<dd></dd>
 	<dd>&nbsp;</dd>
-	<dd><strong>Posts:</strong> 16</dd><dd><strong>Joined:</strong> <%=p.member.created_at.strftime('%A, %d %b %Y %l:%M %p') %></dd>
+	<dd><strong>Posts:</strong> 16</dd><dd><strong>Joined:</strong> <%=p.member.created_at.strftime('%A, %b %d %Y %l:%M %p') %></dd>
 	</dl>
 	</div>
 </div>

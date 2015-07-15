@@ -17,10 +17,6 @@ sitemap :site do
   url profile_forgotpassword_url, last_mod: Time.now, change_freq: "daily", priority: 0.64
   url announces_index_url, last_mod: Time.now, change_freq: "daily", priority: 0.51
   
-  
-  
-  
-
 end
 
 # You can have multiple sitemaps like the above – just make sure their names are different.

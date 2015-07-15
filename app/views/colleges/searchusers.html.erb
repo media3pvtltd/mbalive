@@ -1,16 +1,15 @@
 <% unless  @member.empty? %>
 
-<select name="undergraduate_school" id="undergraduate_school" style="margin-top: -13px;position:absolute;left: 928px;width: 228px;">
+<select name="undergraduate_school" id="undergraduate_school" style="margin-top: -13px;position:absolute;left: 928px;width: 228px;" class="form-control">
+	
 <% @member.each do |f| %>
-	<option value="<%= f.username %>"> <%= f.username  %> </option>
+	<option value="<%= f.email %>"> <%= f.email  %> </option>
 
 <% end %>
 </select>
 <% else %>
 	<select name="undergraduate_school" id="undergraduate_school" style="margin-top: -13px;position:absolute;left: 928px;width: 228px;">
-		<option value="#"> No Users </option>
+		<option value="#"> No Userids </option>
 	</select>
-
-
 
 <% end %>

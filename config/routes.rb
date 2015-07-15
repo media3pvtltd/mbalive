@@ -1,7 +1,7 @@
   Rails.application.routes.draw do
 
   get 'colleges/index/:stateid' => 'colleges#index', :as => 'college_index'
-  get 'colleges/searchusers/:username' => 'colleges#searchusers', :as => 'colleges_search'
+  get 'colleges/searchusers/:email' => 'colleges#searchusers', :as => 'colleges_search'
 
   get 'mailboxes/mailbox'
   get 'mailboxes/show/:id' => "mailboxes#show", :as => 'mailboxes_show'

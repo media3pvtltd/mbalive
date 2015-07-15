@@ -6,7 +6,7 @@ class CollegesController < ApplicationController
   end
   def searchusers
     
-    @member=Member.where("username LIKE ? ", "%#{params[:username]}%")
-    # binding.pry
+    @member=Member.where("email LIKE ? ", "%#{params[:email]}%")
+      # binding.pry
   end
 end

@@ -1752,6 +1752,27 @@ table th					{ background-color: #3e6aa7; font-size:12px; color:#FFF;}
 
 table tr					{ font-size:10px;}
 
+#demo
+{
+  display:none;border-width: 1px;
+  border-style: solid;
+  padding: 12px 3%;
+  width: 100%;
+  font-size: 13px;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  margin: 0px;
+  font-family: calibric;
+  background-color: #fff;
+  border-color: #E3E3E3;
+  margin-top: -19px;
+  border-top-style: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+   appearance: none;
+}
+
 
 
 @media screen and ( max-width:1024px)
