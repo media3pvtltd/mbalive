@@ -120,6 +120,9 @@
 
   get 'schools/schoolappinfo/:schoolname' => 'schools#schoolappinfo', :as => 'school_appinfo'
   get 'profile/name' => 'profile#name', :as => 'profile_name'
+
+  get 'profile/gpa_gmat'
+  get 'profile/search_gpa'
   
 
 

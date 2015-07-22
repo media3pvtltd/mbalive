@@ -404,7 +404,19 @@ end
     end
 
   end
+  def gpa_gmat
+     @title="Search By GPA & GMAT SCORE" 
+     @all_mebers=Member.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)  
+  end
 
+  def search_gpa
+    binding.pry
+    @title= 'Search By GPA & GMAT SCORE'
+    @all_mebers=Member.where(" gmat_score = ? OR gpa = ?", params[:gmat_score],params[:gpa]).paginate(:page => params[:page], :per_page => 20) 
+ 
+    # redirect_to profile_name_path
+    render 'gpa_gmat'
+  end
   
 
   private
