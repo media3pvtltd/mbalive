@@ -410,7 +410,7 @@ end
   end
 
   def search_gpa
-    binding.pry
+    #binding.pry
     @title= 'Search By GPA & GMAT SCORE'
     @all_mebers=Member.where(" gmat_score = ? OR gpa = ?", params[:gmat_score],params[:gpa]).paginate(:page => params[:page], :per_page => 20) 
  
