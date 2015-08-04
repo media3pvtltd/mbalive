@@ -1,6 +1,6 @@
 class ProfileController < ApplicationController
 layout 'homepage'
-before_action :authenticate_user, :except => [:name,:profileupdates,:topusers,:login, :create, :forgotpassword, :createforgotpassword,:updatepassword,:createupdatepwd]
+before_action :authenticate_user, :except => [:name,:search_gpa,:gpa_gmat,:search_gpa,:schoolapplied,:profileupdates,:searchuser,:searchschool,:topusers,:login, :create, :forgotpassword, :createforgotpassword,:updatepassword,:createupdatepwd]
 before_action :check_session, :only => [:login, :create]
 
 
