@@ -6,7 +6,7 @@
         <div class="google_adsense skyscraper" style="padding-left: 18px;">
          <div class="profile_blog_lft" style="border:none">
                         <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
-                        <%= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
+                        <%#= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
                         <%#= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
 
                         <%#= ad_unit(:wide_skyscraper, "pub-6430317842295107", {:slot => "5305317726"}) %>
@@ -23,6 +23,10 @@
 
 
 <div class="eight columns">
+<div class="gdlr-button small with-border">
+    <div class="mtbtn" title="Post a new topic"><a data-rel="gdlr-lms-lightbox" data-lb-open="login-form">Add New Forum</a></div>
+    
+  </div>
 <div class="well">
   <div class="forabg">
     <div class="inner">
@@ -40,14 +44,17 @@
       <% @forum.each do |f| %>
         <li class="row" id="forum2">
           <dl class="icon" style="background-image: url(./styles/marina_teal/imageset/forum_read.svg); background-repeat: no-repeat;">
-            <dt title="No unread posts">
+            <dt >
             <!-- <a class="feed-icon-forum" title="Feed - Your first forum" href="http://phpbb3.pixelgoose.com/feed.php?f=2"><i class="fa fa-rss-square fa-lg"></i></a> -->
               <a href="<%= forum_topic_path(f.id) %>" class="forumtitle"><%= f.name %></a><br>
               <div class="forum-description" style="  font-size: 14px;"><%= raw f.description %>
-                  <button class="gdlr-button medium" style="color:white; background-color:#26BCB0;margin-top:10px;padding: 8px; ">
+              <br>
+              <br>
+                  <!-- <button class="gdlr-button medium" style="color:white; background-color:#26BCB0;margin-top:10px;padding: 8px; ">
                   
-               <a href="<%= forum_topic_path(f.id) %>" style='color:inherit'>View</a>
-              <!--  <a href="" style="padding-left: 40px;">View</a> --></button>
+               <a href="<%#= forum_topic_path(f.id) %>" style='color:inherit'>View</a>
+              <!--  <a href="" style="padding-left: 40px;">View</a> --><!-- </button> --> 
+              <a class="gdlr-button medium" href="<%= forum_topic_path(f.id) %>" target="_self" style="color:white; background-color:#26BCB0;padding: 3%;  width: 25%;padding-top: 2%;  padding-bottom: 2%; ">View</a>
               </div>
             </dt>
             <dd class="topics"><%=f.topics.count %> <dfn>Topics</dfn></dd>
@@ -60,7 +67,12 @@
               <% unless @topic.nil? %>
 
                 <%a=Member.find_by_id(@topic.member_id) %>
-               by <a href="<%=static_profile_path(a.username)%>" class="username-coloured"> <%=a.username %></a>
+               by 
+               <%if a.nil? %>
+               <%="Guest User" %>
+               <%else %>
+               <a href="<%=static_profile_path(a.username)%>" class="username-coloured"> <%=a.username %></a>
+               <%end %>
                <i class="fa fa-arrow-right grey"></i></a> <br><%=  @topic.created_at.strftime("%m-%d-%Y") %><br>            
 
               </span> 
@@ -108,4 +120,25 @@
 <div class="clear"></div>
 </div>
 </div>
+</div>
+
+<div>
+  <div class="gdlr-lms-lightbox-wrapper" style="display:none;"><div class="mtbtn"></div><div class="gdlr-lms-lightbox-container login-form">
+  <div class="gdlr-lms-lightbox-close"><i class="icon-remove"></i></div>
+
+
+  <%=form_tag forums_forum_create_path :class => 'wpcf7-form' do %>
+    <%#= hidden_field_tag 'refforum_id', params[:id] %>
+    <p>Title*<br>
+    <span class="wpcf7-form-control-wrap your-name">
+    <%= text_field_tag 'name' , "",class: 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required' ,placeholder: 'Name' %>
+    </span></p>
+    <p>Description*</p>
+    <span class="wpcf7-form-control-wrap your-message",  >
+      <%= text_area_tag 'description', "", class: 'wpcf7-form-control wpcf7-textarea' ,placeholder: 'Description' %>
+    </span>
+    <%= submit_tag 'Post',class: 'button1' %>
+  <%end %>
+  </div>
+  </div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709092049) do
+ActiveRecord::Schema.define(version: 20150811064319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -469,6 +469,7 @@ ActiveRecord::Schema.define(version: 20150709092049) do
     t.integer  "forum_id"
     t.integer  "member_id"
     t.integer  "refforum_id"
+    t.string   "user_type"
   end
 
   create_table "ucolleges", force: true do |t|

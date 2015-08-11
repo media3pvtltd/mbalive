@@ -40,6 +40,10 @@
   post 'forums/postcreate'
   get 'forums/forumsearch'
 
+  get 'forums/forum_new'
+  post 'forums/forum_create'
+
+
   mount Refinery::Core::Engine, at: Refinery::Core.mounted_path
    
 

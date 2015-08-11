@@ -23,7 +23,7 @@
 <div class="well">
 <div class="topic-actions">
 	<div class="buttons">
-		<div class="mtbtn" title="Post a new topic"><a data-rel="gdlr-lms-lightbox" data-lb-open="login-form">Post a new topic</a></div>
+		<div class="mtbtn" title="Post a new topic"><a data-rel="gdlr-lms-lightbox" data-lb-open="login-form">Response</a></div>
 		
 	</div>
     <div class="search-box">
@@ -58,10 +58,17 @@
 
 
 	<%=form_tag topic_new_path, :class => 'gdlr-lms-form' do %>
+
 		<%= hidden_field_tag 'refforum_id', params[:id] %>
+		
+		<%if current_user.nil? %>
+		<%=hidden_field_tag 'user_type', '2000'  %>
+		<%else %>
+		<%=hidden_field_tag 'user_type', session[:user_id] %>
+		<%end %>
 		<p>Title*<br>
 		<span class="wpcf7-form-control-wrap your-name">
-		<%= text_field_tag 'name' , "",class: 'form-control' ,placeholder: 'Name' %>
+		<%= text_field_tag 'name' ,"",class: 'form-control' ,placeholder: 'Name' %>
 		</span></p>
 		<%= submit_tag 'Post',class: 'button1' %>
 	<%end %>
@@ -75,11 +82,12 @@
 			<dl class="icon">
 				<dt class="header-name" style="text-align:center">Topics</dt>
 				<dd class="posts">Replies</dd>
-				<dd class="views">Views</dd>
+				<!-- <dd class="views">Views</dd> -->
 				<dd class="lastpost"><span>Last post</span></dd>
 			</dl>
 		</li>
 	</ul>
+	<!-- ----------------------------------------------- -->
 	<ul class="topiclist topics">
 
 	<%@topics.each do |t| %>
@@ -87,19 +95,24 @@
 			<dl class="icon" style="background-image: url(./styles/marina_teal/imageset/topic_read.svg); background-repeat: no-repeat;" >
 				
 			
-                <dt style="background-image: url(<%#=t.member.image.thumb('32x32').url unless t.member.nil? %>); background-repeat: no-repeat;background-position:0 2px" title="No unread posts"><a href="<%= forum_posts_path(t.id) %>" class="topictitle"><%= t.name.capitalize %></a>
+                <dt style="background-image: url(<%#=t.member.image.thumb('32x32').url unless t.member.nil? %>); background-repeat: no-repeat;background-position:0 2px" ><a href="<%= forum_posts_path(t.id) %>" class="topictitle"><%= t.name.capitalize %></a>
 					<br>
-					by <a href="<%=static_profile_path(t.member.username) unless t.member.nil? %>" style="color: #AA0000;" class="username-coloured"><%=t.member.username unless t.member.nil?%></a> » <%=t.created_at.strftime('%A, %b %d %Y %l:%M %p') %>
+					by 
+					<%if t.member.nil? %>
+					<%="Guest User" %>
+					<%else %>
+					<a href="<%=static_profile_path(t.member.username) unless t.member.nil? %>" style="color: #AA0000;" class="username-coloured"><%=t.member.username unless t.member.nil?%></a> <%end %>» <%=t.created_at.strftime('%A, %d %b %Y %l:%M %p') %>
 				</dt>
 				<dd class="posts"><%=t.posts.count %> <dfn>Replies</dfn></dd>
-				<dd class="views">34498 <dfn>Views</dfn></dd>
-				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="<%=static_profile_path(t.member.username) unless t.member.nil? %>"><%=t.posts.last.member.username unless t.posts.empty? %></a>
-					<a href="./viewtopic.php?style=14&amp;f=2&amp;t=3&amp;p=19#p19"><i class="fa fa-arrow-right grey"></i></a> <br><%=t.created_at.strftime("%m-%d-%Y") %></span>
+				<!-- <dd class="views">34498 <dfn>Views</dfn></dd> -->
+				<dd class="lastpost"><span><dfn>Last post </dfn>by<a href="<%=static_profile_path(t.member.username) unless t.member.nil? %>"><%=t.posts.last.member.username unless t.posts.empty? %></a>
+					<a href="./viewtopic.php?style=14&amp;f=2&amp;t=3&amp;p=19#p19"><i class="fa fa-arrow-right grey"></i></a> <br><%=t.created_at.strftime("%d-%m-%Y") %></span>
 				</dd>
 			</dl>
 		</li>
 	<%end %>
 	</ul>
+	<!-- ----------------------------------------------- -->
 	</div>
 </div>
 </div>

@@ -412,15 +412,14 @@ end
   def search_gpa
     #binding.pry
     @title= 'Search By GPA & GMAT SCORE'
-    if params[:gmat_score].empty?
-      flash[:error]="GMAT can't be blank"
-      redirect_to profile_gpa_gmat_path
+    if !params[:gmat_score].empty?  
+      @all_mebers=Member.where(" gmat_score > ?", params[:gmat_score]).paginate(:page => params[:page], :per_page => 20) 
 
-    elsif params[:gpa].empty?
-      flash[:error]= "GPA can't be blank"  
-      redirect_to profile_gpa_gmat_path   
+    elsif !params[:gpa].empty?
+    @all_mebers=Member.where(" gpa > ?",params[:gpa]).paginate(:page => params[:page], :per_page => 20)  
    else
-    @all_mebers=Member.where(" gmat_score = ? OR gpa = ?", params[:gmat_score],params[:gpa]).paginate(:page => params[:page], :per_page => 20) 
+
+    @all_mebers=Member.where(" gmat_score > ? AND gpa > ?", params[:gmat_score],params[:gpa]).paginate(:page => params[:page], :per_page => 20) 
   
     # redirect_to profile_name_path
     render 'gpa_gmat'

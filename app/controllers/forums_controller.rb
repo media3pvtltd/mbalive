@@ -2,12 +2,12 @@ class ForumsController < ApplicationController
 layout 'homepage'
   before_filter :change_style
   # before_filter :authenticate_user
-  before_action :authenticate_user, :except => [:index, :topics]
+  before_action :authenticate_user, :except => [:index, :topics, :forum_new, :forum_create,:topic_new ]
 
 
   def index
     
-  	@forum=Refforum.order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
+  	@forum=Refforum.order(created_at: :desc).paginate(:page => params[:page], :per_page => 10)
     @title = "Forum"
   end
   def topics
@@ -20,6 +20,19 @@ layout 'homepage'
     @topics = Refforum.find(params[:id]).topics.paginate(:page => params[:page], :per_page => 20)
     
   end
+
+   def forum_new
+     @forums = Refforum.new     
+   end
+
+   def forum_create
+     @forums = Refforum.new(forums_params)
+     if @forums.save
+      redirect_to forums_index_path
+    end
+   end
+
+
   def topic_new
     @title = "Forum"
     @topic = Topic.new(params.permit(:refforum_id, :name))
@@ -31,7 +44,7 @@ layout 'homepage'
   end
   def posts
      @title = "Forum"
-    @posts = Topic.find(params[:topic]).posts.paginate(:page => params[:page], :per_page => 1)
+    @posts = Topic.find(params[:topic]).posts.paginate(:page => params[:page], :per_page => 20)
   end
   def post_new
     @post = Post.new(params.permit(:topic_id, :content))
@@ -73,5 +86,8 @@ layout 'homepage'
   end
   def change_style
     @forum = 'forum'
+  end
+  def forums_params
+    params.permit(:name,:description)
   end
 end
