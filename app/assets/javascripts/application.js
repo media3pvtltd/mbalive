@@ -29,4 +29,4 @@
 //= require masterslider.min
 //= require jquery.noty
 //= require owl.carousel
-
+//= require jquery-ui

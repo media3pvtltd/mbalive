@@ -40,6 +40,7 @@ gem 'shareable'
 # gem 'capistrano-rails', group: :development
 gem 'pry'
 gem 'bcrypt' 
+gem 'rails4-autocomplete'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'will_paginate', '~> 3.0.6'
