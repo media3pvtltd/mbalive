@@ -413,13 +413,15 @@ end
     #binding.pry
     @title= 'Search By GPA & GMAT SCORE'
     if !params[:gmat_score].empty?  
-      @all_mebers=Member.where(" gmat_score > ?", params[:gmat_score]).paginate(:page => params[:page], :per_page => 20) 
-
+      @all_mebers=Member.where(" gmat_score >= ?", params[:gmat_score]).paginate(:page => params[:page], :per_page => 20) 
+       render 'gpa_gmat'
     elsif !params[:gpa].empty?
-    @all_mebers=Member.where(" gpa > ?",params[:gpa]).paginate(:page => params[:page], :per_page => 20)  
+    @all_mebers=Member.where(" gpa >= ?",params[:gpa]).paginate(:page => params[:page], :per_page => 20)  
+  
+     render 'gpa_gmat'
    else
 
-    @all_mebers=Member.where(" gmat_score > ? AND gpa > ?", params[:gmat_score],params[:gpa]).paginate(:page => params[:page], :per_page => 20) 
+    @all_mebers=Member.where(" gmat_score >= ? AND gpa > ?", params[:gmat_score],params[:gpa]).paginate(:page => params[:page], :per_page => 20) 
   
     # redirect_to profile_name_path
     render 'gpa_gmat'
