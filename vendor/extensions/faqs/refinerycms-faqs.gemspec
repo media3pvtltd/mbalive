@@ -2,6 +2,7 @@
 
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
+  s.author           = 'mbalive'
   s.name              = 'refinerycms-faqs'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Faqs extension for Refinery CMS'
