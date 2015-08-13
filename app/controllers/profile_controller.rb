@@ -411,21 +411,40 @@ end
 
   def search_gpa
     #binding.pry
-    @title= 'Search By GPA & GMAT SCORE'
-    if !params[:gmat_score].empty?  
-      @all_mebers=Member.where(" gmat_score >= ?", params[:gmat_score]).paginate(:page => params[:page], :per_page => 20) 
-       render 'gpa_gmat'
-    elsif !params[:gpa].empty?
-    @all_mebers=Member.where(" gpa >= ?",params[:gpa]).paginate(:page => params[:page], :per_page => 20)  
-  
-     render 'gpa_gmat'
-   else
+          @title= 'Search By GPA & GMAT SCORE'
+          
+        if  params[:gpa] =~ /^\d{1,1}(\.\d{1,2})?$/? true : false || params[:gmat_score] =~ /\A\d+\z/? true : false
+            
+                if !params[:gmat_score].empty?  
+                    if Integer(params[:gmat_score]) <= 800 && Integer(params[:gmat_score]) >= 100
+                      @all_mebers=Member.where(" gmat_score >= ?", params[:gmat_score]).paginate(:page => params[:page], :per_page => 20) 
+                       render 'gpa_gmat'
+                    else
+                      flash[:error]="Please enter valid GMAT"
+                      redirect_to profile_gpa_gmat_path   
+                    end
+                elsif !params[:gpa].empty?
 
-    @all_mebers=Member.where(" gmat_score >= ? AND gpa > ?", params[:gmat_score],params[:gpa]).paginate(:page => params[:page], :per_page => 20) 
-  
-    # redirect_to profile_name_path
-    render 'gpa_gmat'
-  end
+                    if Float(params[:gpa]) >= 1.0 && Float(params[:gpa]) <= 4.0
+                      @all_mebers=Member.where(" gpa >= ?",params[:gpa]).paginate(:page => params[:page], :per_page => 20)  
+                
+                      render 'gpa_gmat'
+                    else
+                      flash[:error]="Please enter valid GPA"
+                      redirect_to profile_gpa_gmat_path   
+                    end
+               else
+
+                @all_mebers=Member.where(" gmat_score >= ? AND gpa > ?", params[:gmat_score],params[:gpa]).paginate(:page => params[:page], :per_page => 20) 
+              
+                # redirect_to profile_name_path
+                render 'gpa_gmat'
+               end
+          
+       else
+         flash[:error]="Please enter correct GPA and GMAT score"
+         redirect_to profile_gpa_gmat_path
+       end
   end
   
 
