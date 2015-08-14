@@ -10,31 +10,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale = 1.0" />
     <%= favicon_link_tag 'favicon.ico' %>
-    <title>MBA Numbers</title>
+    <!-- <meta name="keywords" content="<%#= content_for?(:meta_keywords) ? yield(:meta_keywords) : "Auto auctions ghana, Car auction ghana, car parts gahana, auto parts search, Parts search, online auto, online auto shops, automobile nigeria, Best auto stores in nigeria" %>"> -->
+   <!--  <title>MBA Numbers</title> -->
     <%= metamagic %>
-    <%
-       if params[:controller] == "profile" && params[:action] == "index"
-        
-         meta title: "Profile search | best schools in usa by state | Top ranked MBA Schools | in USA
-  ",
-         description: "mbaschool",
-         keywords: %w(MBA Education , MBA Numbers , MBA colleges in USA , MBA us ranking , best schools in usa by state , Top ranked MBA Schools)
-        elsif params[:controller] == "myadvices" && params[:action] == "myadvice"
-
-        meta title: "MY advice | best MBA Numbers | Top MBA Education | MBA colleges in USA | MBA Reviews | MBA Acceptance in usa
-
-  ",
-         description: "mbaschool",
-         keywords: %w(MBA Numbers , MBA Education , MBA colleges in USA , MBA ranking , best schools in usa by state , Top ranked MBA Schools , MBA Admissions , Top bussiness schools in America , MBA Reviews , MBA Acceptance , Bussiness school rankings , School Rankings , Bussiness School Rankings , Top Bussiness Schools in US , GPA for MBA , gmat MBA)
-
-
-                    
-       end
-
-
-
-    %>
-
+    
 
 
     <%= stylesheet_link_tag @forum.nil? ? 'application' : 'forum', media: 'all', 'data-turbolinks-track' => true %>
