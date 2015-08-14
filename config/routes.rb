@@ -13,7 +13,7 @@
   get 'mailboxes/newest'
   get 'mailboxes/outboxdel/:id' => 'mailboxes#outboxdel', :as => 'mailboxes_outboxdel'
 
-  get 'schools/index', :as => 'schools'
+  get 'schools' => 'schools#index', :as => 'schools'
   get 'schools/profile'
   get 'schools/name'
   get 'schools/search'
@@ -28,7 +28,7 @@
   get 'schools/ranking'
   get 'schools/state'
   get 'schools/statelist'
-  get 'forums/index'
+  get 'forums' => 'forums#index', :as => 'forums_index'
   get 'forums/:id/topics' => 'forums#topics', :as => 'forum_topic'
   post 'forums/topics/new' => 'forums#topic_new', :as => 'topic_new'
   get 'forums/topics/:topic/posts' => 'forums#posts', :as => 'forum_posts'
@@ -60,7 +60,7 @@
 
   get 'homepage/create'
   
-  get 'myadvices/myadvice'
+  get 'myadvices' => 'myadvices#myadvice',as: 'myadvices_myadvice'
   get 'myadvice/blog/:id' => 'myadvices#blogdata', as: 'myadvices_blog' 
   get 'myadvices/new'
   post 'myadvices/create'
@@ -69,8 +69,8 @@
   get 'announces/single/:id' => 'announces#single', as: 'announces_announce'
   get 'auth/:provider/callback' => 'authentications#create' 
   get 'logout' => 'authentications#destroy'
-  get 'announces/faq'
-  get 'announces/about'
+  get 'faqs' => 'announces#faq', as: 'announces_faq'
+  get 'about_us' => 'announces#about', as: 'announces_about'
   get 'announces/faq_single/:id' => 'announces#faq_single', as: 'announces_faq_single'
   get 'members/index'
   
@@ -78,7 +78,7 @@
   get 'subscribes/confirm/:token' => 'subscribes#confirm', as: 'subscribes_confirm'
 
   post 'subscribes/submitcontact'
-  get 'subscribes/contactus'
+  get 'contactus' => 'subscribes#contactus', as: 'subscribes_contactus'
 
   #--------profile routes-------------#
   get 'profile/index' => 'profile#index', :as => 'profile_index'
