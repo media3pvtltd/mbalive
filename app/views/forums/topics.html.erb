@@ -31,7 +31,7 @@
 <div class="well">
 <div class="topic-actions">
 	<div class="buttons">
-		<div class="mtbtn" title="Post a new topic"><a data-rel="gdlr-lms-lightbox" data-lb-open="login-form">respond</a></div>
+		<div class="mtbtn" title="Post a new topic"><a data-rel="gdlr-lms-lightbox" data-lb-open="login-form">Respond</a></div>
 		
 	</div>
     <div class="search-box">
@@ -109,12 +109,12 @@
 					<%if t.member.nil? %>
 					<%="Guest User" %>
 					<%else %>
-					<a href="<%=static_profile_path(t.member.username) unless t.member.nil? %>" style="color: #AA0000;" class="username-coloured"><%=t.member.username unless t.member.nil?%></a> <%end %>» <%=t.created_at.strftime('%A, %d %b %Y %l:%M %p') %>
+					<a href="<%=static_profile_path(t.member.username) unless t.member.nil? %>" style="color: #AA0000;" class="username-coloured"><%=t.member.username unless t.member.nil?%></a> <%end %>» <%=t.created_at.strftime('%A, %b %d %Y %l:%M %p') %>
 				</dt>
 				<dd class="posts"><%=t.posts.count %> <dfn>Replies</dfn></dd>
 				<!-- <dd class="views">34498 <dfn>Views</dfn></dd> -->
 				<dd class="lastpost"><span><dfn>Last post </dfn>by<a href="<%=static_profile_path(t.member.username) unless t.member.nil? %>"><%=t.posts.last.member.username unless t.posts.empty? %></a>
-					<a href="./viewtopic.php?style=14&amp;f=2&amp;t=3&amp;p=19#p19"><i class="fa fa-arrow-right grey"></i></a> <br><%=t.created_at.strftime("%d-%m-%Y") %></span>
+					<a href="./viewtopic.php?style=14&amp;f=2&amp;t=3&amp;p=19#p19"><i class="fa fa-arrow-right grey"></i></a> <br><%=t.created_at.strftime("%m-%d-%Y") %></span>
 				</dd>
 			</dl>
 		</li>
